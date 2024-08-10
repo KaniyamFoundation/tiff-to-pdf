@@ -20,7 +20,7 @@ os.system(add_ocr_layer)
 
 
 print("Adding watermark")
-add_watermark = './markpdf_linux-amd64  ' + in_folder + "_a.pdf 'Digitized by Roja Muthiah Research Library, Chennai' "  + in_folder   + '_b.pdf  -x -40 -y -60'
+add_watermark = './markpdf_linux-amd64  ' + in_folder + "_a.pdf 'Digitized by Roja Muthiah Research Library, Chennai' "  + in_folder   + '_b.pdf  -x -60 -y -60'
 print(add_watermark)
 os.system(add_watermark)
 
