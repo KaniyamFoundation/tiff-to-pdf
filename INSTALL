@@ -1,0 +1,20 @@
+sudo apt install ocrmypdf tesseract-ocr-eng  tesseract-ocr-tam ghostscript libtiff-tools imagemagick python3-img2pdf img2pdf pngquant jbig2dec autotools-dev automake libtool libleptonica-dev
+
+
+
+# https://ocrmypdf.readthedocs.io/en/latest/jbig2.html
+
+
+#git clone https://github.com/agl/jbig2enc
+#cd jbig2enc
+#./autogen.sh
+#./configure && make
+#[sudo] make install
+
+
+#https://github.com/ajaxray/markpdf
+
+wget https://github.com/ajaxray/markpdf/releases/download/1.0.1/markpdf_linux-amd64
+chmod a+x markpdf_linux-amd64
+
+
