@@ -9,7 +9,7 @@ in_folder = sys.argv[1]
 out_pdf = in_folder +  ".pdf"
 
 print("Converting tif to PDF")
-tiff2pdf_command = "img2pdf --pdfa " + in_folder + "/*.tif -o " + out_pdf
+tiff2pdf_command = "img2pdf  " + in_folder + "/*.tif -o " + out_pdf
 print(tiff2pdf_command)
 os.system(tiff2pdf_command)
 
