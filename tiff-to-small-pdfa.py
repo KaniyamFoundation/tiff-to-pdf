@@ -13,21 +13,26 @@ tiff2pdf_command = "img2pdf  " + in_folder + "/*.tif -o " + out_pdf
 print(tiff2pdf_command)
 os.system(tiff2pdf_command)
 
+time.sleep(2)
+
 print("Adding OCR layer")
 add_ocr_layer = "ocrmypdf -l tam+eng  --output-type pdfa-3 " + out_pdf + " " + in_folder + "_a.pdf"
 print(add_ocr_layer)
 os.system(add_ocr_layer)
+time.sleep(2)
 
 
 print("Adding watermark")
 add_watermark = './markpdf_linux-amd64  ' + in_folder + "_a.pdf 'Digitized by Roja Muthiah Research Library, Chennai' "  + in_folder   + '_b.pdf  -x -60 -y -60'
 print(add_watermark)
 os.system(add_watermark)
+time.sleep(2)
 
 print("Shrinking PDF")
 shrink_pdf = "/bin/bash shrink-pdf.sh " + in_folder + "_b.pdf " + in_folder + "_small.pdf"
 print(shrink_pdf)
 os.system(shrink_pdf)
+time.sleep(2)
 
 
 print("Done!")
