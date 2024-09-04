@@ -1,7 +1,42 @@
-
 import os
 import sys
 import time
+from pathlib import Path
+
+markpdf = Path("./markpdf_linux-amd64")
+
+if markpdf.is_file():
+    print("Found markpdf. Adding execute permission to it.")
+    os.system("chmod a+x ./markpdf_linux-amd64")
+else:
+    ("The file markpdf_linux-amd64 is missing in current folder. Downloading it.")
+
+    try:
+        os.system("wget -q https://github.com/KaniyamFoundation/tiff-to-pdf/raw/main/markpdf_linux-amd64")
+        os.system("chmod a+x ./markpdf_linux-amd64")
+    except:
+        print("Cant download it. Please download manually and place in current folder")
+        sys.exit()
+
+
+
+shrinkpdf = Path("./shrink-pdf.sh")
+
+if shrinkpdf.is_file():
+    print("Found shrink-pdf.sh. Adding execute permission to it.")
+    os.system("chmod a+x ./shrink-pdf.sh")
+else:
+    ("The file shrink-pdf.sh is missing in current folder. Downloading it.")
+
+    try:
+        os.system("wget -q https://raw.githubusercontent.com/KaniyamFoundation/tiff-to-pdf/main/shrink-pdf.sh")
+        os.system("chmod a+x ./shrink-pdf.sh")
+    except:
+        print("Cant download it. Please download manually and place in current folder")
+        sys.exit()
+
+        
+
 
 in_folder = sys.argv[1]
 
